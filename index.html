@@ -1,14 +1,14 @@
 
 <input type="file" id="files" name="files[]" multiple />
-<output id="list"></output>
+<!-- <output id="list"></output> -->
 
 <script>
 
   function handleFileSelect(evt) {
-    var files = evt.target.files;
-    for (var i = 0, f; f = files[i]; i++) {
+    let files = evt.target.files;
+    for (let i = 0, f; f = files[i]; i++) {
 
-      // if (!f.type.match('json.*')) {
+      // if (f.type.match('json.*')) {
       //   continue;
       // } else {
       //   alert('Please use a JSON file.');
@@ -21,7 +21,7 @@
 
         return function(e) {
 
-          var obj = JSON.parse(e.target.result);
+          let obj = JSON.parse(e.target.result);
 
           function nested(nestedObject){
             if(typeof nestedObject.content === 'object') {
